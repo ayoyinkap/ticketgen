@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Church Love Feast Ticket Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Church Love Feast</h1>
+            <p>Generate Your Special Ticket</p>
+        </header>
+        
+        <div class="app-container">
+            <section class="form-section">
+                <h2>Attendee Information</h2>
+                <p class="form-description">Fill in the details below to generate your love feast ticket.</p>
+                
+                <form id="ticketForm">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="seating">Seating Preference</label>
+                        <select id="seating" name="seating" required>
+                            <option value="">Select seating preference</option>
+                            <option value="general">General Seating</option>
+                            <option value="premium">Premium Seating</option>
+                            <option value="vip">VIP Seating</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dietary">Dietary Requirements</label>
+                        <select id="dietary" name="dietary">
+                            <option value="none">No special requirements</option>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten Free</option>
+                            <option value="other">Other (please specify in notes)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Special Notes</label>
+                        <input type="text" id="notes" name="notes" placeholder="Any special requests or notes">
+                    </div>
+                    
+                    <button type="submit" class="btn">Generate Ticket</button>
+                </form>
+            </section>
+            
+            <section class="ticket-section">
+                <div id="ticketPreview" class="ticket hidden">
+                    <div class="ticket-header">
+                        <h2>Church Love Feast</h2>
+                        <p>Admission Ticket</p>
+                    </div>
+                    
+                    <div class="ticket-body">
+                        <div class="ticket-info">
+                            <div class="ticket-row">
+                                <span class="ticket-label">Name:</span>
+                                <span class="ticket-value" id="ticketName">-</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">Email:</span>
+                                <span class="ticket-value" id="ticketEmail">-</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">Phone:</span>
+                                <span class="ticket-value" id="ticketPhone">-</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">Seating:</span>
+                                <span class="ticket-value" id="ticketSeating">-</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">Dietary:</span>
+                                <span class="ticket-value" id="ticketDietary">-</span>
+                            </div>
+                            <div class="ticket-row">
+                                <span class="ticket-label">Notes:</span>
+                                <span class="ticket-value" id="ticketNotes">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-qr">
+                            <div class="ticket-qr-placeholder">
+                                QR Code Placeholder
+                            </div>
+                        </div>
+                        
+                        <div class="ticket-id" id="ticketId">
+                            #LF-000001
+                        </div>
+                    </div>
+                    
+                    <div class="ticket-footer">
+                        <p>Please present this ticket at the entrance</p>
+                        <p>Date: November 15, 2023 | Time: 6:00 PM</p>
+                        <p>St. Mary's Church, 123 Faith Avenue</p>
+                    </div>
+                </div>
+                
+                <div class="ticket-controls">
+                    <button id="printBtn" class="btn btn-print hidden">Print Ticket</button>
+                    <button id="newTicketBtn" class="btn hidden">Generate New Ticket</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
